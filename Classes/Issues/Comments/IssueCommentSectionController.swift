@@ -135,7 +135,7 @@ final class IssueCommentSectionController: ListBindingSectionController<IssueCom
                 autocomplete: strongSelf.autocomplete
             )
             edit.delegate = self
-            let nav = UINavigationController(rootViewController: edit)
+            let nav = NavigationController(rootViewController: edit)
             nav.modalPresentationStyle = .formSheet
             self?.viewController?.route_present(to: nav)
         })
@@ -164,7 +164,7 @@ final class IssueCommentSectionController: ListBindingSectionController<IssueCom
             style: .default,
             handler: { [weak self] _ in
                 guard let markdown = self?.object?.rawMarkdown else { return }
-                let nav = UINavigationController(
+                let nav = NavigationController(
                     rootViewController: ViewMarkdownViewController(markdown: markdown)
                 )
                 self?.viewController?.route_present(to: nav)

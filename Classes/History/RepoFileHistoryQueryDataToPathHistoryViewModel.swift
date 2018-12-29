@@ -64,8 +64,7 @@ extension RepoFileHistoryQuery.Data {
                 text: StyledTextRenderer(
                     string: builder.build(),
                     contentSizeCategory: contentSizeCategory,
-                    inset: PathCommitCell.inset,
-                    backgroundColor: .white
+                    inset: PathCommitCell.inset
                 ).warm(width: width),
                 commitURL: url
             )

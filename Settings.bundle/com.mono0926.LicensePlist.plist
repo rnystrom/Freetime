@@ -64,7 +64,7 @@
 			<key>File</key>
 			<string>com.mono0926.LicensePlist/Fabric</string>
 			<key>Title</key>
-			<string>Fabric (1.7.2)</string>
+			<string>Fabric (1.9.0)</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>
@@ -104,7 +104,7 @@
 			<key>File</key>
 			<string>com.mono0926.LicensePlist/FMDB</string>
 			<key>Title</key>
-			<string>FMDB (2.7.2)</string>
+			<string>FMDB (2.7.5)</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>
@@ -128,7 +128,7 @@
 			<key>File</key>
 			<string>com.mono0926.LicensePlist/HTMLString</string>
 			<key>Title</key>
-			<string>HTMLString (4.0.1)</string>
+			<string>HTMLString (4.0.2)</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>
@@ -144,7 +144,7 @@
 			<key>File</key>
 			<string>com.mono0926.LicensePlist/ImageAlertAction</string>
 			<key>Title</key>
-			<string>ImageAlertAction (1.0.0)</string>
+			<string>ImageAlertAction (2.0.0)</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>
@@ -176,7 +176,7 @@
 			<key>File</key>
 			<string>com.mono0926.LicensePlist/SnapKit</string>
 			<key>Title</key>
-			<string>SnapKit (4.0.0)</string>
+			<string>SnapKit (4.0.1)</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>
@@ -192,7 +192,7 @@
 			<key>File</key>
 			<string>com.mono0926.LicensePlist/StyledTextKit</string>
 			<key>Title</key>
-			<string>StyledTextKit (0.1.1)</string>
+			<string>StyledTextKit (0.2.0)</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>
@@ -200,7 +200,7 @@
 			<key>File</key>
 			<string>com.mono0926.LicensePlist/SwiftLint</string>
 			<key>Title</key>
-			<string>SwiftLint (0.27.0)</string>
+			<string>SwiftLint (0.29.1)</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>

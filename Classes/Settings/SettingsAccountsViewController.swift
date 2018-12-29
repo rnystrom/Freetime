@@ -19,6 +19,7 @@ final class SettingsAccountsViewController: UITableViewController, GitHubSession
     override func viewDidLoad() {
         super.viewDidLoad()
         title = NSLocalizedString("Accounts", comment: "")
+        tableView.backgroundColor = Styles.Colors.background
     }
 
     // MARK: Public API

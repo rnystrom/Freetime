@@ -20,7 +20,7 @@
                         <color key="separatorColor" red="0.73725490196078436" green="0.73333333333333328" blue="0.75686274509803919" alpha="1" colorSpace="calibratedRGB"/>
                         <inset key="separatorInset" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="jkq-3p-p02">
-                            <rect key="frame" x="0.0" y="737.5" width="375" height="44"/>
+                            <rect key="frame" x="0.0" y="781.5" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 1.4.0 (1207)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bb-Lj-p2k" customClass="SettingsLabel" customModule="Freetime" customModuleProvider="target">
@@ -344,8 +344,38 @@
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Z8j-JQ-qiy" customClass="StyledTableCell" customModule="Freetime" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="WY1-Sk-q7W" customClass="StyledTableCell" customModule="Freetime" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="551.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WY1-Sk-q7W" id="NLM-4Z-KgF">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dark Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgU-p0-kYD" customClass="SettingsLabel" customModule="Freetime" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="12" width="80" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.14117647059999999" green="0.16078431369999999" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="VvB-jq-Gkc">
+                                                    <rect key="frame" x="311" y="6.5" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="onDarkMode:" destination="NnB-TU-bkW" eventType="valueChanged" id="gW0-Ej-Ph4"/>
+                                                        <action selector="onSignature:" destination="NnB-TU-bkW" eventType="valueChanged" id="Dlo-uo-TIF"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="VvB-jq-Gkc" firstAttribute="centerY" secondItem="NLM-4Z-KgF" secondAttribute="centerY" id="R7o-DM-VM3"/>
+                                                <constraint firstAttribute="trailing" secondItem="VvB-jq-Gkc" secondAttribute="trailing" constant="15" id="bzZ-YQ-pez"/>
+                                                <constraint firstItem="cgU-p0-kYD" firstAttribute="leading" secondItem="NLM-4Z-KgF" secondAttribute="leading" constant="16" id="lDm-CT-t2I"/>
+                                                <constraint firstItem="cgU-p0-kYD" firstAttribute="centerY" secondItem="NLM-4Z-KgF" secondAttribute="centerY" id="v5d-kD-aGh"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Z8j-JQ-qiy" customClass="StyledTableCell" customModule="Freetime" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="595.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Z8j-JQ-qiy" id="uAb-lB-GZA">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -372,7 +402,7 @@
                                         <inset key="separatorInset" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="McK-NV-R4T" customClass="StyledTableCell" customModule="Freetime" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="595.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="639.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="McK-NV-R4T" id="M6U-hF-aEN">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -403,14 +433,14 @@
                             <tableViewSection id="GTg-1u-cvV">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="ku5-ZI-OG9" style="IBUITableViewCellStyleDefault" id="Y2k-Zq-AUW" customClass="StyledTableCell" customModule="Freetime" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="675.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="719.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Y2k-Zq-AUW" id="XiT-sq-B22">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Sign Out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ku5-ZI-OG9" customClass="SettingsLabel" customModule="Freetime" customModuleProvider="target">
-                                                    <rect key="frame" x="24" y="0.0" width="336" height="43.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Sign Out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ku5-ZI-OG9">
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.79607843137254897" green="0.14117647058823529" blue="0.19215686274509802" alpha="1" colorSpace="calibratedRGB"/>
@@ -436,6 +466,7 @@
                         <outlet property="badgeCell" destination="pnm-5p-yC5" id="hdC-aO-QSy"/>
                         <outlet property="badgeSettingsButton" destination="36B-Ge-m5V" id="7Sw-oi-5Ra"/>
                         <outlet property="badgeSwitch" destination="FvK-93-raA" id="twy-bl-O1q"/>
+                        <outlet property="darkModeSwitch" destination="VvB-jq-Gkc" id="Avs-aW-lgA"/>
                         <outlet property="defaultReactionLabel" destination="UHH-lU-DUe" id="ew2-Hr-5UH"/>
                         <outlet property="githubStatusCell" destination="x9n-2O-buf" id="xc3-W3-bZW"/>
                         <outlet property="markReadSwitch" destination="8dQ-YU-Yuw" id="5jz-5d-osk"/>
@@ -646,7 +677,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ASM-DA-gBk">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ASM-DA-gBk" customClass="SettingsLabel" customModule="Freetime" customModuleProvider="target">
                                             <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -678,7 +709,7 @@
         <!--Navigation Controller-->
         <scene sceneID="D9x-gg-9aE">
             <objects>
-                <navigationController id="d42-bu-Upj" sceneMemberID="viewController">
+                <navigationController id="d42-bu-Upj" customClass="NavigationController" customModule="Freetime" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ldN-13-vej">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -694,7 +725,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Ad5-42-Gd9">
             <objects>
-                <navigationController storyboardIdentifier="accountsNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="ws0-Mr-B4Z" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="accountsNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="ws0-Mr-B4Z" customClass="NavigationController" customModule="Freetime" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="igk-Sw-tO3">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>

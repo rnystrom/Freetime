@@ -141,7 +141,6 @@ final class ImageUploadTableViewController: UITableViewController,
                 dismissBlock()
             }
         ])
-
         present(alert, animated: trueUnlessReduceMotionEnabled)
     }
 

@@ -60,9 +60,12 @@ final class SearchRecentViewModel: NSObject, ListDiffable {
     // MARK: Private API
 
     private var standardAttributes: [NSAttributedStringKey: Any] {
+        let textColor = Appearance.currentTheme == .light
+            ? Styles.Colors.Gray.dark.color
+            : Styles.Colors.Gray.light.color
         return [
             .font: Styles.Text.body.preferredFont,
-            .foregroundColor: Styles.Colors.Gray.dark.color
+            .foregroundColor: textColor
         ]
     }
 }

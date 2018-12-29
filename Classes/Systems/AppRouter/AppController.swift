@@ -86,7 +86,7 @@ RouterPropsSource {
                 newNotificationsRootViewController(client: appClient),
                 newSearchRootViewController(client: appClient),
                 newBookmarksRootViewController(client: appClient),
-                settingsNavigationController ?? UINavigationController() // satisfy compiler
+                settingsNavigationController ?? NavigationController() // satisfy compiler
             ],
             clearDetail: !isSwitch
         )

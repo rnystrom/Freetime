@@ -19,7 +19,8 @@ class SearchViewController: UIViewController,
     SearchRecentSectionControllerDelegate,
     SearchRecentHeaderSectionControllerDelegate,
     TabNavRootViewControllerType,
-    SearchResultSectionControllerDelegate {
+    SearchResultSectionControllerDelegate,
+    ThemeChangeListener {
 
     private let client: GithubClient
     private let noResultsKey = "com.freetime.SearchViewController.no-results-key" as ListDiffable
@@ -52,7 +53,7 @@ class SearchViewController: UIViewController,
     private let collectionView: UICollectionView = {
         let view = UICollectionView(frame: .zero, collectionViewLayout: ListCollectionViewLayout.basic())
         view.alwaysBounceVertical = true
-        view.backgroundColor = Styles.Colors.background
+        view.backgroundColor = .clear
         return view
     }()
 
@@ -67,6 +68,7 @@ class SearchViewController: UIViewController,
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        registerForThemeChanges()
 
         keyboardAdjuster = ScrollViewKeyboardAdjuster(
             scrollView: collectionView,
@@ -110,6 +112,10 @@ class SearchViewController: UIViewController,
             collectionView.frame = bounds
             collectionView.collectionViewLayout.invalidateForOrientationChange()
         }
+    }
+
+    func themeDidChange(_ theme: Theme) {
+        view.backgroundColor = Styles.Colors.background
     }
 
     func searchBarBecomeFirstResponder() {

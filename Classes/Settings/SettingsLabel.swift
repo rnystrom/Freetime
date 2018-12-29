@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class SettingsLabel: UILabel {
+final class SettingsLabel: UILabel, ThemeChangeListener {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -21,7 +21,14 @@ final class SettingsLabel: UILabel {
     }
 
     func configure() {
+        registerForThemeChanges()
         font = Styles.Text.body.preferredFont
+    }
+
+    func themeDidChange(_ theme: Theme) {
+        textColor = theme == .light
+            ? Styles.Colors.Gray.dark.color
+            : Styles.Colors.Gray.light.color
     }
 
 }

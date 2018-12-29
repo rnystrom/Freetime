@@ -14,13 +14,13 @@ class RootViewController: UIViewController, PrimaryViewController {}
 class SplitViewTests: XCTestCase {
 
     func test_whenSeparating_withPrimaryAndOtherVCs_thatSplitVCIsSeparated_andResultHasNonPrimary() {
-        let masterTab = UITabBarController()
+        let masterTab = TabBarController()
 
-        let leftNav = UINavigationController()
+        let leftNav = NavigationController()
         let left = UIViewController()
         leftNav.pushViewController(left, animated: false)
 
-        let rightNav = UINavigationController()
+        let rightNav = NavigationController()
         let right1 = RootViewController()
         let right2 = RootViewController()
         let right3 = UIViewController()
@@ -58,13 +58,13 @@ class SplitViewTests: XCTestCase {
     }
 
     func test_whenSeparating_withSinglePrimary_thatSplitVCIsSeparated_andResultHasPlaceholder() {
-        let masterTab = UITabBarController()
+        let masterTab = TabBarController()
 
-        let leftNav = UINavigationController()
+        let leftNav = NavigationController()
         let left = UIViewController()
         leftNav.pushViewController(left, animated: false)
 
-        let rightNav = UINavigationController()
+        let rightNav = NavigationController()
         let right1 = RootViewController()
         rightNav.pushViewController(right1, animated: false)
         masterTab.viewControllers = [leftNav, rightNav]
@@ -93,13 +93,13 @@ class SplitViewTests: XCTestCase {
     }
 
     func test_whenCollapsing_withVCsStackedOnMasterAndDetail_thatVCsStackedOnSelectedNav() {
-        let masterTab = UITabBarController()
+        let masterTab = TabBarController()
 
-        let leftNav = UINavigationController()
+        let leftNav = NavigationController()
         let left = UIViewController()
         leftNav.pushViewController(left, animated: false)
 
-        let rightNav = UINavigationController()
+        let rightNav = NavigationController()
         let right1 = RootViewController()
         let right2 = RootViewController()
         rightNav.pushViewController(right1, animated: false)
@@ -107,7 +107,7 @@ class SplitViewTests: XCTestCase {
         masterTab.viewControllers = [leftNav, rightNav]
         masterTab.selectedIndex = 1
 
-        let detailNav = UINavigationController()
+        let detailNav = NavigationController()
 
         let detail1 = RepositoryViewController(
             client: GithubClient(userSession: nil),
@@ -155,13 +155,13 @@ class SplitViewTests: XCTestCase {
     }
 
     func test_whenCollapsing_withPlaceholderStackedOnDetail_thatVCsStackedWithoutPlaceholder() {
-        let masterTab = UITabBarController()
+        let masterTab = TabBarController()
 
-        let leftNav = UINavigationController()
+        let leftNav = NavigationController()
         let left = UIViewController()
         leftNav.pushViewController(left, animated: false)
 
-        let rightNav = UINavigationController()
+        let rightNav = NavigationController()
         let right1 = RootViewController()
         let right2 = RootViewController()
         rightNav.pushViewController(right1, animated: false)
@@ -169,7 +169,7 @@ class SplitViewTests: XCTestCase {
         masterTab.viewControllers = [leftNav, rightNav]
         masterTab.selectedIndex = 1
 
-        let detailNav = UINavigationController()
+        let detailNav = NavigationController()
         let detail1 = SplitPlaceholderViewController()
         detailNav.pushViewController(detail1, animated: false)
 

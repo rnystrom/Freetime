@@ -26,7 +26,7 @@ class DefaultReactionDetailController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.backgroundColor = Styles.Colors.background
         checkCurrentDefault()
     }
 

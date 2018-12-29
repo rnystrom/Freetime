@@ -20,7 +20,6 @@ final class RepositoryFileCell: SelectableCell {
 
         isAccessibilityElement = true
         accessibilityTraits |= UIAccessibilityTraitButton
-        backgroundColor = .white
 
         disclosure.tintColor = Styles.Colors.Gray.light.color
         disclosure.contentMode = .scaleAspectFit
@@ -41,7 +40,6 @@ final class RepositoryFileCell: SelectableCell {
         }
 
         label.font = Styles.Text.body.preferredFont
-        label.textColor = Styles.Colors.Gray.dark.color
         label.lineBreakMode = .byTruncatingHead
         contentView.addSubview(label)
         label.snp.makeConstraints { make in
@@ -55,6 +53,16 @@ final class RepositoryFileCell: SelectableCell {
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    override func themeDidChange(_ theme: Theme) {
+        super.themeDidChange(theme)
+        switch theme {
+        case .light:
+            label.textColor = Styles.Colors.Gray.dark.color
+        case .dark:
+            label.textColor = Styles.Colors.Gray.light.color
+        }
     }
 
     // MARK: Public API

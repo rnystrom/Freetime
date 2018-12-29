@@ -198,7 +198,7 @@ final class Router: NSObject {
         if let controller = controller as? UINavigationController {
             wrapped = controller
         } else {
-            wrapped = UINavigationController(rootViewController: controller)
+            wrapped = NavigationController(rootViewController: controller)
         }
         controller.router = self
         split.showDetailViewController(wrapped, sender: nil)

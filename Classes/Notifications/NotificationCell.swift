@@ -46,7 +46,6 @@ final class NotificationCell: SelectableCell, CAAnimationDelegate {
         accessibilityTraits |= UIAccessibilityTraitButton
         isAccessibilityElement = true
 
-        backgroundColor = .white
         clipsToBounds = true
 
         contentView.addSubview(iconImageView)
@@ -143,6 +142,11 @@ final class NotificationCell: SelectableCell, CAAnimationDelegate {
         super.layoutSubviews()
         textView.reposition(for: contentView.bounds.width)
         readOverlayView.frame = bounds
+    }
+
+    override func themeDidChange(_ theme: Theme) {
+        super.themeDidChange(theme)
+        backgroundColor = theme == .light ? .white : .black
     }
 
     override var accessibilityLabel: String? {

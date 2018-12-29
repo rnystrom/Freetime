@@ -51,6 +51,7 @@ extension SFSafariViewController {
 			schemedURL = u
 		}
 		let safariViewController = SFSafariViewController(url: schemedURL)
+        safariViewController.preferredBarTintColor = Styles.Colors.barTint
 		safariViewController.preferredControlTintColor = Styles.Colors.Blue.medium.color
 		return safariViewController
 	}

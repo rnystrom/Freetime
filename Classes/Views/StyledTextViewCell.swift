@@ -9,7 +9,7 @@
 import UIKit
 import StyledTextKit
 
-class StyledTextViewCell: UICollectionViewCell {
+class StyledTextViewCell: UICollectionViewCell, ThemeChangeListener {
 
     private let textView = MarkdownStyledTextView()
 
@@ -18,6 +18,7 @@ class StyledTextViewCell: UICollectionViewCell {
         textView.gesturableAttributes = MarkdownAttribute.all
         contentView.addSubview(textView)
         isAccessibilityElement = true
+        registerForThemeChanges()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -28,6 +29,10 @@ class StyledTextViewCell: UICollectionViewCell {
         super.layoutSubviews()
         layoutContentView()
         textView.reposition(for: contentView.bounds.width)
+    }
+
+    func themeDidChange(_ theme: Theme) {
+        backgroundColor = Styles.Colors.background
     }
 
     override var accessibilityLabel: String? {

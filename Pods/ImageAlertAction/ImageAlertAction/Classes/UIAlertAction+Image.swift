@@ -20,17 +20,25 @@ public extension UIAlertAction {
     ///
     /// - parameter title: The text to use for the button title.
     /// The value you specify should be localized for the user’s current language.
-    /// This parameter must not be nil, except in a tvOS app where a nil title may be used with [UIAlertActionStyle.cancel](https://developer.apple.com/documentation/uikit/uialertactionstyle/cancel).
+    /// This parameter must not be nil, except in a tvOS app where a nil title
+    /// may be used with [UIAlertAction.Style.cancel](https://developer.apple.com/documentation/uikit/uialertaction/style/cancel).
     /// - parameter image: An image to display on the left side of the button.
     /// Use this to visually convey the action's purpose.
     /// - parameter style: Additional styling information to apply to the button.
     /// Use the style information to convey the type of action that is performed by the button.
-    /// For a list of possible values, see the constants in [UIAlertActionStyle](https://developer.apple.com/documentation/uikit/uialertactionstyle).
+    /// For a list of possible values, see the constants in
+    /// [UIAlertAction.Style](https://developer.apple.com/documentation/uikit/uialertaction/style).
     /// - parameter handler: A block to execute when the user selects the action.
-    /// This block has no return value and takes the selected action object as its only parameter.
+    /// This block has no return value and takes the selected action object as
+    /// its only parameter.
     ///
     /// - returns: A new alert action object.
-    public convenience init(title: String? = nil, image: UIImage, style: UIAlertActionStyle, handler: ((UIAlertAction) -> Void)? = nil) {
+    public convenience init(
+        title: String? = nil,
+        image: UIImage,
+        style: UIAlertAction.Style,
+        handler: ((UIAlertAction) -> Void)? = nil
+    ) {
         self.init(title: title, style: style, handler: handler)
         setValue(image, forKey: imageKey)
     }

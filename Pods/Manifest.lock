@@ -7,11 +7,11 @@ PODS:
   - Apollo/Core (0.8.0)
   - cmark-gfm-swift (0.1.0)
   - ContextMenu (0.5.0)
-  - Crashlytics (3.9.3):
-    - Fabric (~> 1.7.2)
+  - Crashlytics (3.12.0):
+    - Fabric (~> 1.9.0)
   - DateAgo (0.1.0)
   - DropdownTitleView (0.1.0)
-  - Fabric (1.7.2)
+  - Fabric (1.9.0)
   - FBSnapshotTestCase (2.1.4):
     - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
   - FBSnapshotTestCase/Core (2.1.4)
@@ -20,22 +20,22 @@ PODS:
   - FLAnimatedImage (1.0.12)
   - FlatCache (0.1.0)
   - FLEX (2.4.0)
-  - FMDB (2.7.2):
-    - FMDB/standard (= 2.7.2)
-  - FMDB/standard (2.7.2)
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
   - GitHawkRoutes (0.1.1)
   - GitHubAPI (0.1.0):
     - Alamofire (~> 4.4.0)
     - Apollo (~> 0.8.0)
   - GitHubSession (0.1.0)
   - Highlightr (1.1.0)
-  - HTMLString (4.0.1)
+  - HTMLString (4.0.2)
   - IGListKit/Default (3.3.0):
     - IGListKit/Diffing
   - IGListKit/Diffing (3.3.0)
   - IGListKit/Swift (3.3.0):
     - IGListKit/Default
-  - ImageAlertAction (1.0.0)
+  - ImageAlertAction (2.0.0)
   - MessageViewController (0.2.1)
   - NYTPhotoViewer/AnimatedGifSupport (2.0.0):
     - FLAnimatedImage (~> 1.0.12)
@@ -45,11 +45,11 @@ PODS:
   - SDWebImage/GIF (4.0.0):
     - FLAnimatedImage (~> 1.0)
     - SDWebImage/Core
-  - SnapKit (4.0.0)
+  - SnapKit (4.0.1)
   - Squawk (0.1.0)
   - StringHelpers (0.1.0)
-  - StyledTextKit (0.1.1)
-  - SwiftLint (0.27.0)
+  - StyledTextKit (0.2.0)
+  - SwiftLint (0.29.1)
   - SwipeCellKit (1.9.0)
   - TUSafariActivity (1.0.4)
   - XLPagerTabStrip (8.1.0)
@@ -155,16 +155,16 @@ CHECKOUT OPTIONS:
     :commit: 684057771673e60070f8bb3f19f6cec2e9294b55
     :git: https://github.com/GitHawkApp/ContextMenu.git
   DropdownTitleView:
-    :commit: 5d6e0eb1f422a185353dabcd673b04c9ac1d7100
+    :commit: da41d90f6fd980384c6d21d33e610cdbcd36f99a
     :git: https://github.com/GitHawkApp/DropdownTitleView.git
   FlatCache:
-    :commit: beb697643eea11f40bb66683d1576a2772080d9d
+    :commit: 22477a9e1404330326685ac0d5c69a68117300cd
     :git: https://github.com/GitHawkApp/FlatCache.git
   GitHawkRoutes:
     :commit: 9ebcd0849df87ded3f1dc60a300320a1739b1011
     :git: https://github.com/GitHawkApp/GitHawkRoutes.git
   Highlightr:
-    :commit: 4f7e90477619b8dc4b9e641efd10952c22150c5c
+    :commit: 2006891ea191fc42535af3ee2f21af418d94924c
     :git: https://github.com/GitHawkApp/Highlightr.git
   IGListKit:
     :commit: 34773b673601ad8cb5fb2df8196ca619cdc243d0
@@ -173,10 +173,10 @@ CHECKOUT OPTIONS:
     :commit: 89b13d60e88882cbd3cba66efe75d85fadc13621
     :git: https://github.com/GitHawkApp/MessageViewController.git
   Squawk:
-    :commit: 88d671bbe86e3c18d54e094fac97df12a3054d53
+    :commit: 0a48086f54dd575b44091373ad2fe78b0c4e263d
     :git: https://github.com/GitHawkApp/Squawk.git
   StyledTextKit:
-    :commit: 8583c80e742f886e541c5ec500b7be6f5e7a233f
+    :commit: fe3232c980c374d59e520b086b04869e3c920f86
     :git: https://github.com/GitHawkApp/StyledTextKit.git
 
 SPEC CHECKSUMS:
@@ -185,30 +185,30 @@ SPEC CHECKSUMS:
   Apollo: 66e0f52289551545adb7ecdd994e713fdbae26eb
   cmark-gfm-swift: 9915dfe0cd7feda740ab01fc2a1882989b6d5128
   ContextMenu: d7d1aa5a07ce48af08271fdc10b14d0b021408cd
-  Crashlytics: dbb07d01876c171c5ccbdf7826410380189e452c
+  Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
   DateAgo: c678b6435627f2b267980bc6f0a9969389686691
-  DropdownTitleView: 063054a1200a16b9c15596e597e2f1c310caeff4
-  Fabric: 9cd6a848efcf1b8b07497e0b6a2e7d336353ba15
+  DropdownTitleView: e02e559243efb248dd0e8a50665b0acc5f6f2413
+  Fabric: f988e33c97f08930a413e08123064d2e5f68d655
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
-  FlatCache: e67d3d45a0f76b93e66883b802051dcbf9d50649
+  FlatCache: 97ef13ece2ddc5445679c957e2c1f9dd448ab96b
   FLEX: bd1a39e55b56bb413b6f1b34b3c10a0dc44ef079
-  FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   GitHawkRoutes: 468138c117a6fbe79bdd9ba7390bf45d363bc69b
   GitHubAPI: 44a907f9699210536d65179d3d0dc0dc70dde7a1
   GitHubSession: 60c7bbd84fb915a0bd911a367c9661418ccfd7ae
   Highlightr: 70c4df19e4aa55aa1b4387fb98182abce1dec9da
-  HTMLString: 8d9a8a8aaf63dd52c5b8cd9a38e14da52f753210
+  HTMLString: d346ba551d1b7e687190c948ec0c2ddaf4057544
   IGListKit: 7edb98afdb8401245d8bea0b733ebd4ac5e67caf
-  ImageAlertAction: a32a5053978ef2cffbc96f192d4ca2a24c774dd5
+  ImageAlertAction: 59e1652decdaa1d1ad2d12f35cd7223b7a4f7bcc
   MessageViewController: 63ef2719d82c91d949ad52e101f049028a5a0611
   NYTPhotoViewer: 34b8bd6bcc297466adec1668f9a01249d73c90e6
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
-  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
   Squawk: 7dbe029a1de47153a1722a98b787f755f2df2b3e
   StringHelpers: 45c48929f335fa10b9e39ef48ba32ca2a72c89a7
-  StyledTextKit: ea9a28a86955c16ea27f1a1a9278b004966f2bf6
-  SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
+  StyledTextKit: dbfb29a59922c6f18897a0266acd139b7c9e712b
+  SwiftLint: 6772320e40b52049053a518c17db9b0634a0b45a
   SwipeCellKit: 67c91d4641d05b7e8ff1a38f57697d8c0fbcc6cc
   TUSafariActivity: afc55a00965377939107ce4fdc7f951f62454546
   XLPagerTabStrip: 22d4c58200d7c105e0e407ab6bfd01a5d85014be

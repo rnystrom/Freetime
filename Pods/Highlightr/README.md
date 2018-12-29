@@ -28,7 +28,7 @@ This is the main endpoint, you can use it to convert code strings into NSAttribu
 	
 ```
 ### CodeAttributedString
-A sublcass of NSTextStorage, you can use it to highlight text on real time.
+A subclass of NSTextStorage, you can use it to highlight text on real time.
 ```Swift
 	let textStorage = CodeAttributedString()
 	textStorage.language = "Swift"

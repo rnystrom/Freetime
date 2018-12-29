@@ -1,6 +1,6 @@
 {
   "name": "StyledTextKit",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "license": {
     "type": "MIT"
   },
@@ -11,7 +11,7 @@
   "summary": "Declarative building and fast rendering attributed string library.",
   "source": {
     "git": "https://github.com/GitHawkApp/StyledTextKit.git",
-    "tag": "0.1.1"
+    "tag": "0.2.0"
   },
   "source_files": "Source/*.swift",
   "platforms": {

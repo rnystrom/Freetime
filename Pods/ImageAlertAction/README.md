@@ -72,7 +72,7 @@ To present a `UIAlertController` containing the `UIAlertAction`, nothing changes
 let alertController = UIAlertController(
   title: "Title",
   message: "Message",
-  preferredStyle: style
+  preferredStyle: .actionSheet
 )
 
 let settings = UIAlertAction(

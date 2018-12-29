@@ -9,14 +9,17 @@
 import Foundation
 
 func RepositoryAttributedString(owner: String, name: String) -> NSAttributedString {
+    let textColor = Appearance.currentTheme == .light
+        ? Styles.Colors.Gray.dark.color
+        : Styles.Colors.Gray.light.color
     let ownerAttributes: [NSAttributedStringKey: Any] = [
         .font: Styles.Text.body.preferredFont,
-        .foregroundColor: Styles.Colors.Gray.dark.color
+        .foregroundColor: textColor
     ]
 
     let nameAttributes: [NSAttributedStringKey: Any] = [
         .font: Styles.Text.bodyBold.preferredFont,
-        .foregroundColor: Styles.Colors.Gray.dark.color
+        .foregroundColor: textColor
     ]
 
     let text = NSMutableAttributedString(string: owner + "/", attributes: ownerAttributes)

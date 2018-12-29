@@ -77,12 +77,12 @@ final class SplitViewControllerDelegate: UISplitViewControllerDelegate {
 
         if detailVCs.count > 0 {
             // if there are active VCs, push them onto the new nav stack
-            let nav = UINavigationController()
+            let nav = NavigationController()
             nav.setViewControllers(detailVCs, animated: false)
             return nav
         } else {
             // otherwise use a placeholder VC
-            return UINavigationController(rootViewController: SplitPlaceholderViewController())
+            return NavigationController(rootViewController: SplitPlaceholderViewController())
         }
     }
 

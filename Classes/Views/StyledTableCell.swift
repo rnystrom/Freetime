@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StyledTableCell: UITableViewCell {
+class StyledTableCell: UITableViewCell, ThemeChangeListener {
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -21,11 +21,16 @@ class StyledTableCell: UITableViewCell {
     }
 
     private func configure() {
+        registerForThemeChanges()
         textLabel?.font = Styles.Text.body.preferredFont
 
         let background = UIView()
         background.backgroundColor = Styles.Colors.Gray.alphaLighter
         selectedBackgroundView = background
+    }
+
+    func themeDidChange(_ theme: Theme) {
+        backgroundColor = theme == .light ? .white : .black
     }
 
 }

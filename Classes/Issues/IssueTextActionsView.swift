@@ -15,7 +15,7 @@ final class IssueTextActionsCell: SelectableCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        imageView.tintColor = Styles.Colors.Gray.dark.color
+        imageView.tintColor = Styles.Colors.Gray.light.color
         imageView.contentMode = .center
         contentView.addSubview(imageView)
     }
@@ -35,7 +35,12 @@ final class IssueTextActionsCell: SelectableCell {
     }
 
     func configure(operation: IssueTextActionOperation) {
-        imageView.image = operation.icon
+        switch Appearance.currentTheme {
+        case .light:
+            imageView.image = operation.icon
+        case .dark:
+            imageView.image = operation.icon?.withRenderingMode(.alwaysTemplate)
+        }
         imageView.accessibilityLabel = operation.name
     }
 
@@ -72,7 +77,7 @@ struct IssueTextActionOperation {
 
 }
 
-final class IssueTextActionsView: UIView, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+final class IssueTextActionsView: UIView, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, ThemeChangeListener {
 
     weak var delegate: IssueTextActionsViewDelegate?
     weak var sendDelegate: IssueTextActionsViewSendDelegate?
@@ -123,7 +128,7 @@ final class IssueTextActionsView: UIView, UICollectionViewDataSource, UICollecti
         self.operations = operations
 
         super.init(frame: .zero)
-
+        registerForThemeChanges()
         translatesAutoresizingMaskIntoConstraints = false
 
         collectionView.clipsToBounds = true
@@ -135,9 +140,10 @@ final class IssueTextActionsView: UIView, UICollectionViewDataSource, UICollecti
         if showSendButton {
             collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: gradientWidth)
 
+            let baseColor: UIColor = Appearance.currentTheme == .light ? .white : .black
             sendButtonGradientLayer.startPoint = CGPoint(x: 0, y: 0.5)
             sendButtonGradientLayer.endPoint = CGPoint(x: 1, y: 0.5)
-            sendButtonGradientLayer.colors = [UIColor(white: 1, alpha: 0).cgColor, UIColor.white.cgColor]
+            sendButtonGradientLayer.colors = [baseColor.withAlphaComponent(0).cgColor, baseColor.cgColor]
             layer.addSublayer(sendButtonGradientLayer)
 
             let blue = Styles.Colors.Blue.medium.color
@@ -180,6 +186,12 @@ final class IssueTextActionsView: UIView, UICollectionViewDataSource, UICollecti
         } else {
             collectionView.frame = bounds
         }
+    }
+
+    func themeDidChange(_ theme: Theme) {
+        let baseColor: UIColor = Appearance.currentTheme == .light ? .white : Styles.Colors.Gray.dark.color
+        sendButtonGradientLayer.colors = [baseColor.withAlphaComponent(0).cgColor, baseColor.cgColor]
+        collectionView.reloadData()
     }
 
     @objc private func onSend() {

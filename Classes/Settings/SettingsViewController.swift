@@ -14,7 +14,8 @@ import Squawk
 final class SettingsViewController: UITableViewController,
     NewIssueTableViewControllerDelegate,
     DefaultReactionDelegate,
-GitHubSessionListener {
+    GitHubSessionListener,
+    ThemeChangeListener {
 
     // must be injected
     var sessionManager: GitHubSessionManager! {
@@ -38,6 +39,7 @@ GitHubSessionListener {
     @IBOutlet weak var badgeSettingsButton: UIButton!
     @IBOutlet weak var badgeCell: UITableViewCell!
     @IBOutlet weak var markReadSwitch: UISwitch!
+    @IBOutlet weak var darkModeSwitch: UISwitch!
     @IBOutlet weak var accountsCell: StyledTableCell!
     @IBOutlet weak var apiStatusLabel: UILabel!
     @IBOutlet weak var apiStatusView: UIView!
@@ -50,8 +52,10 @@ GitHubSessionListener {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        registerForThemeChanges()
         versionLabel.text = Bundle.main.prettyVersionString
         markReadSwitch.isOn = NotificationModelController.readOnOpen
+        darkModeSwitch.isOn = Appearance.currentTheme == .dark
         apiStatusView.layer.cornerRadius = 7
         signatureSwitch.isOn = Signature.enabled
         pushSettingsButton.accessibilityLabel = NSLocalizedString("How we send push notifications in GitHawk", comment: "")
@@ -101,6 +105,10 @@ GitHubSessionListener {
                 strongSelf.apiStatusLabel.textColor = color
             }
         }
+    }
+
+    func themeDidChange(_ theme: Theme) {
+        tableView.backgroundColor = Styles.Colors.background
     }
 
     // MARK: UITableViewDelegate
@@ -164,7 +172,7 @@ GitHubSessionListener {
                 return
         }
         viewController.delegate = self
-        let navController = UINavigationController(rootViewController: viewController)
+        let navController = NavigationController(rootViewController: viewController)
         navController.modalPresentationStyle = .formSheet
         route_present(to: navController)
     }
@@ -280,6 +288,11 @@ GitHubSessionListener {
 
     @IBAction private func onSignature(_ sender: Any) {
         Signature.enabled = signatureSwitch.isOn
+    }
+
+    @IBAction private func onDarkMode(_ sender: Any) {
+        let newTheme: Theme = darkModeSwitch.isOn ? .dark : .light
+        Appearance.setCurrentTheme(newTheme, animated: false)
     }
 
     @IBAction private func onPushNotificationsInfo(_ sender: Any) {

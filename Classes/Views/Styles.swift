@@ -84,11 +84,21 @@ enum Styles {
 
     enum Colors {
 
-        static let background = Styles.Colors.Gray.lighter.color
+        static var background: UIColor {
+            return Appearance.currentTheme == .light
+                ? Styles.Colors.Gray.lighter.color
+                : Styles.Colors.Gray.dark.color
+        }
+        static var barTint: UIColor {
+            return Appearance.currentTheme == .light
+                ? Styles.Colors.lightBarTint
+                : UIColor.black
+        }
         static let purple = "6f42c1"
         static let blueGray = "8697af"
         static let menuBackgroundColor = "292D35"
         static let splitViewBackground = UIColor(red: 0.556863, green: 0.556863, blue: 0.576471, alpha: 1)
+        static let lightBarTint = UIColor(red: 0.969, green: 0.969, blue: 0.969, alpha: 1.0)
 
         enum Red {
             static let medium = "cb2431"
@@ -124,13 +134,18 @@ enum Styles {
     }
 
     static func setupAppearance() {
+        UITabBar.appearance().barTintColor = Styles.Colors.barTint
+        UINavigationBar.appearance().barTintColor = Styles.Colors.barTint
         UINavigationBar.appearance().tintColor =  Styles.Colors.Blue.medium.color
+        let titleTextColor = Appearance.currentTheme == .light
+            ? Styles.Colors.Gray.dark.color
+            : UIColor.white
         UINavigationBar.appearance().titleTextAttributes =
-            [NSAttributedStringKey.foregroundColor: Styles.Colors.Gray.dark.color]
+            [NSAttributedStringKey.foregroundColor: titleTextColor]
         UISwitch.appearance().onTintColor = Styles.Colors.Blue.medium.color
         UISearchBar.appearance().tintColor = Styles.Colors.Blue.medium.color
         DropdownTitleView.appearance().chevronTintColor = Styles.Colors.Gray.medium.color
-        DropdownTitleView.appearance().titleColor = Styles.Colors.Gray.dark.color
+        DropdownTitleView.appearance().titleColor = titleTextColor
         DropdownTitleView.appearance().subtitleColor = Styles.Colors.Gray.light.color
         DropdownTitleView.appearance().titleFont = Styles.Text.bodyBold.preferredFont
         DropdownTitleView.appearance().subtitleFont = Styles.Text.secondaryBold.preferredFont

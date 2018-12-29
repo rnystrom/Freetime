@@ -19,7 +19,7 @@ final class LocalNotificationsCache {
 
     private let path: String
     private lazy var queue: FMDatabaseQueue = {
-        return FMDatabaseQueue(path: self.path)
+        return FMDatabaseQueue(path: self.path)!
     }()
 
     init(

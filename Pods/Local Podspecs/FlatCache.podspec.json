@@ -4,20 +4,18 @@
   "license": {
     "type": "MIT"
   },
-  "homepage": "https://github.com/rnystrom/GitHawk",
+  "homepage": "https://github.com/GitHawkApp/FlatCache",
   "authors": {
     "Ryan Nystrom": "rnystrom@whoisryannystrom.com"
   },
   "summary": "In memory flat cache.",
   "source": {
-    "git": "https://github.com/rnystrom/GitHawk.git",
-    "tag": "#{s.version}"
+    "git": "https://github.com/GitHawkApp/FlatCache.git",
+    "tag": "0.1.0"
   },
   "source_files": "FlatCache/*.swift",
   "platforms": {
-    "osx": null,
-    "ios": null,
-    "tvos": null,
-    "watchos": null
-  }
+    "ios": "9.0"
+  },
+  "swift_version": "4.2"
 }

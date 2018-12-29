@@ -70,7 +70,7 @@ pod 'HTMLString', '~> 4.0'
 Add this line to your Cartfile:
 
 ~~~
-github "alexaurby/HTMLString" ~> 4.0
+github "alexaubry/HTMLString" ~> 4.0
 ~~~
 
 ### Manual

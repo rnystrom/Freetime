@@ -13,7 +13,7 @@ protocol NewFeaturesCellDelegate: class {
     func didTapClose(for cell: NewFeaturesCell)
 }
 
-final class NewFeaturesCell: UICollectionViewCell {
+final class NewFeaturesCell: UICollectionViewCell, ThemeChangeListener {
 
     static let inset = UIEdgeInsets(
         top: Styles.Sizes.rowSpacing,
@@ -32,7 +32,7 @@ final class NewFeaturesCell: UICollectionViewCell {
 
         isAccessibilityElement = true
 
-        backgroundColor = .white
+        registerForThemeChanges()
         contentView.backgroundColor = Styles.Colors.Blue.light.color
         contentView.layer.cornerRadius = Styles.Sizes.cardCornerRadius
         contentView.layer.borderWidth = 1 / UIScreen.main.scale
@@ -77,6 +77,10 @@ final class NewFeaturesCell: UICollectionViewCell {
             width: bounds.width - safeAreaInsets.left - safeAreaInsets.right,
             height: bounds.height
         ), NewFeaturesCell.inset)
+    }
+
+    func themeDidChange(_ theme: Theme) {
+        backgroundColor = theme == .light ? .white : Styles.Colors.Gray.dark.color
     }
 
     @objc private func onCloseButton() {

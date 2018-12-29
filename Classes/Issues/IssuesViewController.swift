@@ -36,7 +36,8 @@ final class IssuesViewController: MessageViewController,
     EmptyViewDelegate,
     MessageTextViewListener,
     IssueLabelTapSectionControllerDelegate,
-IssueManagingContextControllerDelegate {
+    IssueManagingContextControllerDelegate,
+    ThemeChangeListener {
 
     private let client: GithubClient
     private let model: IssueDetailsModel
@@ -63,7 +64,6 @@ IssueManagingContextControllerDelegate {
     lazy private var feed: Feed = {
         let f = Feed(viewController: self, delegate: self, managesLayout: false)
         f.collectionView.contentInset = threadInset
-        f.collectionView.backgroundColor = .white
         return f
     }()
 
@@ -139,7 +139,7 @@ IssueManagingContextControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        registerForThemeChanges()
         makeBackBarItemEmpty()
 
         let labelFormat = NSLocalizedString("#%d in repository %@ by %@", comment: "Accessibility label for an issue/pull request navigation item")
@@ -163,9 +163,6 @@ IssueManagingContextControllerDelegate {
         // setup after feed is lazy loaded
         setup(scrollView: feed.collectionView)
         setMessageView(hidden: true, animated: false)
-
-        // override Feed bg color setting
-        view.backgroundColor = Styles.Colors.background
 
         // setup message view properties
         configure()
@@ -237,6 +234,12 @@ IssueManagingContextControllerDelegate {
                 y: messageView.frame.minY - manageButtonSize.height - Styles.Sizes.gutter),
             size: manageButtonSize
         )
+    }
+
+    func themeDidChange(_ theme: Theme) {
+        view.backgroundColor = Styles.Colors.background
+        messageView.backgroundColor = theme == .light ? .white : .black
+        messageView.textView.textColor = theme == .light ? .black : .white
     }
 
     // MARK: Private API
@@ -571,7 +574,7 @@ IssueManagingContextControllerDelegate {
         case .item(let item):
             guard item is IssueResult else { break }
             updateAndScrollIfNeeded()
-        case .list: break
+        case .list, .clear: break
         }
     }
 

@@ -81,7 +81,7 @@ struct AlertAction {
 
     func newIssue(issueController: NewIssueTableViewController) -> UIAlertAction {
         return UIAlertAction(title: Constants.Strings.newIssue, style: .default) { _ in
-            let nav = UINavigationController(rootViewController: issueController)
+            let nav = NavigationController(rootViewController: issueController)
             nav.modalPresentationStyle = .formSheet
             self.rootViewController?.route_present(to: nav)
         }

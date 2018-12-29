@@ -13,7 +13,7 @@ protocol SearchBarCellDelegate: class {
     func didChangeSearchText(cell: SearchBarCell, query: String)
 }
 
-final class SearchBarCell: UICollectionViewCell, UISearchBarDelegate {
+final class SearchBarCell: UICollectionViewCell, UISearchBarDelegate, ThemeChangeListener {
 
     weak var delegate: SearchBarCellDelegate?
 
@@ -21,8 +21,6 @@ final class SearchBarCell: UICollectionViewCell, UISearchBarDelegate {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-
-        backgroundColor = .white
 
         searchBar.returnKeyType = .search
         searchBar.enablesReturnKeyAutomatically = false
@@ -40,6 +38,11 @@ final class SearchBarCell: UICollectionViewCell, UISearchBarDelegate {
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    func themeDidChange(_ theme: Theme) {
+        backgroundColor = Styles.Colors.background
+        searchBar.barStyle = theme == .dark ? .black : .default
     }
 
     override func layoutSubviews() {

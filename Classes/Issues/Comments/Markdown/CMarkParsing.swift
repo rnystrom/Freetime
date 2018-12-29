@@ -223,7 +223,7 @@ private extension Array where Iterator.Element == [ListElement] {
 
 private extension TableRow {
     func build(options: CMarkOptions, greyBackground: Bool) -> [StyledTextRenderer] {
-        let backgroundColor: UIColor = greyBackground ? Styles.Colors.Gray.lighter.color : .white
+        let backgroundColor: UIColor = greyBackground ? Styles.Colors.Gray.lighter.color : Styles.Colors.background
         let builders: [StyledTextBuilder]
         switch self {
         case .header(let cells):
@@ -287,9 +287,8 @@ private func makeModels(elements: [Element], options: CMarkOptions) -> [ListDiff
             models.append(StyledTextRenderer(
                 string: builder.build(),
                 contentSizeCategory: options.contentSizeCategory,
-                inset: IssueCommentTextCell.inset(isLast: isLast),
-                backgroundColor: .white
-                ).warm(width: options.width))
+                inset: IssueCommentTextCell.inset(isLast: isLast)
+            ).warm(width: options.width))
         }
         runningBuilder = nil
     }

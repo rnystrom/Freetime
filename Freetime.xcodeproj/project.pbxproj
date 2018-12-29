@@ -453,6 +453,9 @@
 		29FE635F21AE2E2F00A07A86 /* RepositoryLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FE635E21AE2E2F00A07A86 /* RepositoryLoadingViewController.swift */; };
 		29FE636121AE2E7900A07A86 /* RepositoryErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FE636021AE2E7900A07A86 /* RepositoryErrorViewController.swift */; };
 		29FF85A51EE1EA7A007B8762 /* ReactionContent+ReactionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FF85A41EE1EA7A007B8762 /* ReactionContent+ReactionType.swift */; };
+		381BA76A21C638300072C963 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381BA76921C638300072C963 /* Theme.swift */; };
+		381BA76C21C717EF0072C963 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381BA76B21C717EF0072C963 /* NavigationController.swift */; };
+		381BA76E21C717FD0072C963 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381BA76D21C717FD0072C963 /* TabBarController.swift */; };
 		3E79A2FF1F8A7DA700E1126B /* ShortcutHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E79A2FE1F8A7DA700E1126B /* ShortcutHandler.swift */; };
 		4920F1A81F72E27200131E9D /* UIViewController+UserActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920F1A71F72E27200131E9D /* UIViewController+UserActivity.swift */; };
 		49AF91B1204B416500DFF325 /* MergeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AF91B0204B416500DFF325 /* MergeTests.swift */; };
@@ -1048,6 +1051,9 @@
 		29FE636021AE2E7900A07A86 /* RepositoryErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryErrorViewController.swift; sourceTree = "<group>"; };
 		29FF85A41EE1EA7A007B8762 /* ReactionContent+ReactionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ReactionContent+ReactionType.swift"; sourceTree = "<group>"; };
 		36115D494E8C3B4F39AC8CD9 /* Pods-Freetime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Freetime.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Freetime/Pods-Freetime.debug.xcconfig"; sourceTree = "<group>"; };
+		381BA76921C638300072C963 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		381BA76B21C717EF0072C963 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		381BA76D21C717FD0072C963 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		3E106824819769E0A6665A79 /* Pods-FreetimeWatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreetimeWatch.release.xcconfig"; path = "Pods/Target Support Files/Pods-FreetimeWatch/Pods-FreetimeWatch.release.xcconfig"; sourceTree = "<group>"; };
 		3E79A2FE1F8A7DA700E1126B /* ShortcutHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutHandler.swift; sourceTree = "<group>"; };
 		4920F1A71F72E27200131E9D /* UIViewController+UserActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+UserActivity.swift"; sourceTree = "<group>"; };
@@ -1853,8 +1859,10 @@
 				2973E80C20FBD7BF0050233F /* ContrastContextMenu.swift */,
 				297DD5E01F061BBE006E7E63 /* CreateProfileViewController.swift */,
 				29316DBE1ECC95DB007CAE3F /* RootViewControllers.swift */,
+				381BA76B21C717EF0072C963 /* NavigationController.swift */,
 				29C33FDA1F127DBB00EC8D40 /* SplitPlaceholderViewController.swift */,
 				29AC90E41F00A7C8000B80E4 /* SplitViewControllerDelegate.swift */,
+				381BA76D21C717FD0072C963 /* TabBarController.swift */,
 				294B111F1F7B07DD00E04F2D /* TabBarControllerDelegate.swift */,
 				294B111D1F7B07BB00E04F2D /* TabNavRootViewControllerType.swift */,
 				29D548CA1FA27FE900F8E46F /* UINavigationItem+TitleSubtitle.swift */,
@@ -2269,6 +2277,7 @@
 				DCA5ED111FAEE3AE0072F074 /* Store.swift */,
 				29B205FD217B971300E4DD9F /* String+FirstLine.swift */,
 				29B75ADC210AA14F00C28131 /* String+Size.swift */,
+				381BA76921C638300072C963 /* Theme.swift */,
 				754488B01F7ADF8D0032D08C /* UIAlertController+Action.swift */,
 				2967DC55211751CB00FD3683 /* UIContentSizeCategory+Preferred.swift */,
 				98835BCD1F1965E2005BA24F /* UIDevice+Model.swift */,
@@ -2969,6 +2978,7 @@
 				29C0E7071ECBC6C50051D756 /* GithubClient.swift in Sources */,
 				15F28F992108DBA6006421B6 /* SplashView.swift in Sources */,
 				2986B35A1FD30F0B00E3CFC6 /* IssueManagingModel.swift in Sources */,
+				381BA76E21C717FD0072C963 /* TabBarController.swift in Sources */,
 				2981A8A41EFE9FC700E25EF1 /* GithubEmoji.swift in Sources */,
 				2924C18B20D5B3A100FCFCFF /* LabelMenuCell.swift in Sources */,
 				986B873C1F2CEB1500AAB55C /* GQL+RepositoryIssueSummaryType.swift in Sources */,
@@ -3015,6 +3025,7 @@
 				29AF1E8A1F8AB1C30008A0EF /* TextActionsController.swift in Sources */,
 				292FCAFC1EDFCC510026635E /* IssueCommentImageModel.swift in Sources */,
 				292FCAFE1EDFCC510026635E /* IssueCommentModel.swift in Sources */,
+				381BA76C21C717EF0072C963 /* NavigationController.swift in Sources */,
 				292CD3C51F0C9EB200D3D57B /* IssueCommentModelHandling.swift in Sources */,
 				299997382031DEB300995FFD /* IssueMergeType.swift in Sources */,
 				2958406D1EE8EBF3007723C6 /* IssueCommentPhoto.swift in Sources */,
@@ -3248,6 +3259,7 @@
 				29827D7D21AAF1BB00A1B293 /* InitialEmptyViewSectionController.swift in Sources */,
 				293189281F5391F700EF0911 /* Result.swift in Sources */,
 				290CA778216AFAE600DE04F8 /* RoutePerformable.swift in Sources */,
+				381BA76A21C638300072C963 /* Theme.swift in Sources */,
 				29FE635B21AB86B700A07A86 /* BookmarkRepoCell.swift in Sources */,
 				295B51421FC26B8100C3993B /* PeopleCell.swift in Sources */,
 				29316DBF1ECC95DB007CAE3F /* RootViewControllers.swift in Sources */,

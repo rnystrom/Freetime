@@ -11,7 +11,7 @@
   "summary": "Navigation item title view with subtitle and chevron.",
   "source": {
     "git": "https://github.com/GitHawkApp/DropdownTitleView.git",
-    "tag": "#{s.version}"
+    "tag": "0.1.0"
   },
   "source_files": "Source/*.swift",
   "resources": "Source/Assets.xcassets",

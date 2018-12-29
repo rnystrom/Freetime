@@ -16,7 +16,8 @@ import DropdownTitleView
 final class RepositoryViewController: ButtonBarPagerTabStripViewController,
 NewIssueTableViewControllerDelegate,
 ContextMenuDelegate,
-EmptyViewDelegate {
+EmptyViewDelegate,
+ThemeChangeListener {
 
     private struct Details {
         let hasIssuesEnabled: Bool
@@ -60,12 +61,9 @@ EmptyViewDelegate {
     }
 
     override func viewDidLoad() {
-        settings.style.buttonBarBackgroundColor = .white
-        settings.style.buttonBarItemBackgroundColor = .white
         settings.style.selectedBarBackgroundColor = Styles.Colors.Blue.medium.color
         settings.style.buttonBarItemFont = Styles.Text.body.preferredFont
         settings.style.selectedBarHeight = 2.0
-        settings.style.buttonBarItemTitleColor = Styles.Colors.Gray.medium.color
         settings.style.buttonBarItemsShouldFillAvailiableWidth = true
         settings.style.buttonBarHeight = 44
 
@@ -76,11 +74,10 @@ EmptyViewDelegate {
         }
 
         edgesForExtendedLayout = []
-
+        registerForThemeChanges()
+        
         super.viewDidLoad()
 
-        navigationController?.navigationBar.backgroundColor = .white
-        view.backgroundColor = .white
         makeBackBarItemEmpty()
         delegate = self
 
@@ -97,6 +94,20 @@ EmptyViewDelegate {
         navigationTitle.configure(title: repo.name, subtitle: repo.owner, accessibilityLabel: accessibilityLabel)
 
         fetchDetails()
+    }
+
+    func themeDidChange(_ theme: Theme) {
+        switch theme {
+        case .light:
+            settings.style.buttonBarBackgroundColor = .white
+            settings.style.buttonBarItemBackgroundColor = .white
+            settings.style.buttonBarItemTitleColor = Styles.Colors.Gray.medium.color
+        case .dark:
+            settings.style.buttonBarBackgroundColor = Styles.Colors.Gray.dark.color
+            settings.style.buttonBarItemBackgroundColor = Styles.Colors.Gray.dark.color
+            settings.style.buttonBarItemTitleColor = .white
+        }
+        view.backgroundColor = Styles.Colors.background
     }
 
     // MARK: Private API

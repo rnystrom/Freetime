@@ -31,7 +31,7 @@ func newNotificationsRootViewController(client: GithubClient) -> UIViewControlle
     )
     let title = NSLocalizedString("Inbox", comment: "")
     controller.title = title
-    let nav = UINavigationController(rootViewController: controller)
+    let nav = NavigationController(rootViewController: controller)
     nav.tabBarItem.title = title
     nav.tabBarItem.image = UIImage(named: "tab-inbox").withRenderingMode(.alwaysOriginal)
     nav.tabBarItem.selectedImage = UIImage(named: "tab-inbox-selected").withRenderingMode(.alwaysOriginal)
@@ -40,7 +40,7 @@ func newNotificationsRootViewController(client: GithubClient) -> UIViewControlle
 
 func newSearchRootViewController(client: GithubClient) -> UIViewController {
     let controller = SearchViewController(client: client)
-    let nav = UINavigationController(rootViewController: controller)
+    let nav = NavigationController(rootViewController: controller)
     nav.tabBarItem.title = Constants.Strings.search
     nav.tabBarItem.image = UIImage(named: "tab-search").withRenderingMode(.alwaysOriginal)
     nav.tabBarItem.selectedImage = UIImage(named: "tab-search-selected").withRenderingMode(.alwaysOriginal)
@@ -67,7 +67,7 @@ func newBookmarksRootViewController(client: GithubClient) -> UIViewController {
     )
     controller.makeBackBarItemEmpty()
     controller.title = title
-    let nav = UINavigationController(rootViewController: controller)
+    let nav = NavigationController(rootViewController: controller)
     nav.tabBarItem.image = UIImage(named: "tab-bookmark").withRenderingMode(.alwaysOriginal)
     nav.tabBarItem.selectedImage = UIImage(named: "tab-bookmark-selected").withRenderingMode(.alwaysOriginal)
     nav.tabBarItem.title = title
