@@ -10,7 +10,7 @@ import UIKit
 
 final class EmptyLoadingView: UIView {
 
-    private let activity = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+    private let activity = UIActivityIndicatorView(style: .gray)
 
     override init(frame: CGRect) {
         super.init(frame: frame)

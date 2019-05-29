@@ -28,7 +28,7 @@ final class RepositorySummaryCell: SelectableCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        accessibilityTraits |= UIAccessibilityTraitButton
+        accessibilityTraits.insert(.button)
         isAccessibilityElement = true
 
         backgroundColor = .white

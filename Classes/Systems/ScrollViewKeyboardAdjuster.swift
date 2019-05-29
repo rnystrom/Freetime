@@ -23,13 +23,13 @@ final class ScrollViewKeyboardAdjuster {
         nc.addObserver(
             self,
             selector: #selector(onKeyboardWillShow(notification:)),
-            name: .UIKeyboardWillShow,
+            name: UIResponder.keyboardWillShowNotification,
             object: nil
         )
         nc.addObserver(
             self,
             selector: #selector(onKeyboardWillHide(notification:)),
-            name: .UIKeyboardWillHide,
+            name: UIResponder.keyboardWillHideNotification,
             object: nil
         )
     }
@@ -38,8 +38,8 @@ final class ScrollViewKeyboardAdjuster {
 
     @objc func onKeyboardWillShow(notification: NSNotification) {
         guard !keyboardIsShowing,
-            let frame = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? CGRect,
-            let duration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? TimeInterval,
+            let frame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect,
+            let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval,
             let viewController = self.viewController
             else { return }
 
@@ -62,7 +62,7 @@ final class ScrollViewKeyboardAdjuster {
 
     @objc func onKeyboardWillHide(notification: NSNotification) {
         guard keyboardIsShowing,
-            let duration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? TimeInterval
+            let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval
             else { return }
 
         keyboardIsShowing = false

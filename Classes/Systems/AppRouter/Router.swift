@@ -38,7 +38,7 @@ extension UIViewController {
             return
         }
 
-        let originalSelector = #selector(addChildViewController(_:))
+        let originalSelector = #selector(addChild)
         let swizzledSelector = #selector(swizzle_addChildViewController(_:))
 
         guard let originalMethod = class_getInstanceMethod(self, originalSelector),
@@ -75,7 +75,7 @@ extension UIViewController {
                 .OBJC_ASSOCIATION_RETAIN_NONATOMIC
             )
             // recursively set to all VCs
-            childViewControllers.forEach { $0.router = newValue }
+            children.forEach { $0.router = newValue }
         }
     }
 

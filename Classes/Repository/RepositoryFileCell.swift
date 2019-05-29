@@ -19,7 +19,7 @@ final class RepositoryFileCell: SelectableCell {
         super.init(frame: frame)
 
         isAccessibilityElement = true
-        accessibilityTraits |= UIAccessibilityTraitButton
+        accessibilityTraits.insert(.button)
         backgroundColor = .white
 
         disclosure.tintColor = Styles.Colors.Gray.light.color

@@ -23,7 +23,7 @@ final class MilestoneCell2: SelectableCell {
         contentView.backgroundColor = nil
 
         isAccessibilityElement = true
-        accessibilityTraits |= UIAccessibilityTraitButton
+        accessibilityTraits.insert(.button)
 
         contentView.addSubview(checkedImageView)
         checkedImageView.tintColor = Styles.Colors.Blue.menu.color

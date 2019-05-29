@@ -20,7 +20,7 @@ final class ReadAllRowController: NSObject {
         readAllLabel.setIsAccessibilityElement(false)
         group.setIsAccessibilityElement(true)
         group.setAccessibilityLabel(readAll)
-        group.setAccessibilityTraits(UIAccessibilityTraitButton)
+        group.setAccessibilityTraits(.button)
     }
 
 }

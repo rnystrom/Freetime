@@ -70,14 +70,14 @@ class SearchRecentViewModelTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
 
-    private var standardAttributes: [NSAttributedStringKey: Any] {
+    private var standardAttributes: [NSAttributedString.Key: Any] {
         return [
             .font: Styles.Text.body.preferredFont,
             .foregroundColor: Styles.Colors.Gray.dark.color
         ]
     }
 
-    private var boldAttributes: [NSAttributedStringKey: Any] {
+    private var boldAttributes: [NSAttributedString.Key: Any] {
         return [
             .font: Styles.Text.bodyBold.preferredFont,
             .foregroundColor: Styles.Colors.Gray.dark.color

@@ -17,7 +17,7 @@ extension UIImage {
     /// Compression is a value between 0.0 and 1.0. Lower is smaller file size but worse quality.
     func compressAndEncode(compression: CGFloat = 0.65, completion: @escaping (Result<String>) -> Void) {
         DispatchQueue.global(qos: .background).async {
-            let data = UIImageJPEGRepresentation(self, compression)
+            let data = self.jpegData(compressionQuality: compression)
 
             guard let base64 = data?.base64EncodedString() else {
                 completion(.error(nil))

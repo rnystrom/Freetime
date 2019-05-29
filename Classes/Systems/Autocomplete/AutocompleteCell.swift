@@ -23,7 +23,7 @@ final class AutocompleteCell: StyledTableCell {
     private let emojiLabel = UILabel()
     private let titleLabel = UILabel()
 
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
         thumbnailImageView.contentMode = .scaleAspectFill

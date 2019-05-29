@@ -17,7 +17,7 @@ final class IssueMilestoneCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         isAccessibilityElement = true
-        accessibilityTraits |= UIAccessibilityTraitButton
+        accessibilityTraits.insert(.button)
 
         titleLabel.backgroundColor = .clear
         contentView.addSubview(titleLabel)
@@ -51,7 +51,7 @@ final class IssueMilestoneCell: UICollectionViewCell {
     // MARK: Public API
 
     func configure(milestone: Milestone) {
-        let milestoneAttributes: [NSAttributedStringKey: Any] = [
+        let milestoneAttributes: [NSAttributedString.Key: Any] = [
             .foregroundColor: Styles.Colors.Gray.light.color,
             .font: Styles.Text.secondary.preferredFont
         ]
@@ -59,7 +59,7 @@ final class IssueMilestoneCell: UICollectionViewCell {
             string: NSLocalizedString("Milestone: ", comment: ""),
             attributes: milestoneAttributes
         )
-        let titleAttributes: [NSAttributedStringKey: Any] = [
+        let titleAttributes: [NSAttributedString.Key: Any] = [
             .foregroundColor: Styles.Colors.Gray.dark.color,
             .font: Styles.Text.secondaryBold.preferredFont
         ]

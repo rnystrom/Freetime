@@ -18,7 +18,7 @@ enum DetectedMarkdownAttribute {
     case checkbox(MarkdownCheckboxModel)
 }
 
-func DetectMarkdownAttribute(attributes: [NSAttributedStringKey: Any]?) -> DetectedMarkdownAttribute? {
+func DetectMarkdownAttribute(attributes: [NSAttributedString.Key: Any]?) -> DetectedMarkdownAttribute? {
     guard let attributes = attributes else { return nil }
     if let urlString = attributes[MarkdownAttribute.url] as? String, let url = URL(string: urlString) {
         return .url(url)

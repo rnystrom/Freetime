@@ -20,6 +20,6 @@ protocol AutocompleteType {
 
     func accept(index: Int) -> String?
 
-    var highlightAttributes: [NSAttributedStringKey: Any]? { get }
+    var highlightAttributes: [NSAttributedString.Key: Any]? { get }
 
 }

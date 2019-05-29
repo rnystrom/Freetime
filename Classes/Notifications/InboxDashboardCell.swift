@@ -27,7 +27,7 @@ final class InboxDashboardCell: SelectableCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        accessibilityTraits |= UIAccessibilityTraitButton
+        accessibilityTraits.insert(.button)
         isAccessibilityElement = true
 
         backgroundColor = .white
@@ -84,9 +84,9 @@ final class InboxDashboardCell: SelectableCell {
         textView.configure(with: model.text, width: contentView.bounds.width)
         dateLabel.setText(date: model.date, format: .short)
 
-        var titleAttributes = [
-            NSAttributedStringKey.font: Styles.Text.title.preferredFont,
-            NSAttributedStringKey.foregroundColor: Styles.Colors.Gray.light.color
+        var titleAttributes: [NSAttributedString.Key: Any] = [
+            .font: Styles.Text.title.preferredFont,
+            .foregroundColor: Styles.Colors.Gray.light.color
         ]
         let title = NSMutableAttributedString(string: "\(model.owner)/\(model.name) ", attributes: titleAttributes)
         titleAttributes[.font] = Styles.Text.secondary.preferredFont

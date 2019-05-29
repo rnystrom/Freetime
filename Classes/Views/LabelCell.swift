@@ -17,7 +17,7 @@ final class LabelCell: UICollectionViewCell {
         super.init(frame: frame)
 
         contentView.backgroundColor = .clear
-        accessibilityTraits |= UIAccessibilityTraitStaticText
+        accessibilityTraits.insert(.staticText)
 
         label.backgroundColor = .clear
         label.textAlignment = .center

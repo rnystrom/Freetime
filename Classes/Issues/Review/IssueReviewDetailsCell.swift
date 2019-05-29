@@ -105,13 +105,13 @@ final class IssueReviewDetailsCell: IssueCommentBaseCell, ListBindable {
         icon.tintColor = iconTintColor
         icon.image = UIImage(named: iconName)?.withRenderingMode(.alwaysTemplate)
 
-        var attributes = [
-            NSAttributedStringKey.font: Styles.Text.title.preferredFont,
-            NSAttributedStringKey.foregroundColor: Styles.Colors.Gray.medium.color
+        var attributes: [NSAttributedString.Key: Any] = [
+            .font: Styles.Text.title.preferredFont,
+            .foregroundColor: Styles.Colors.Gray.medium.color
         ]
         let mActorString = NSMutableAttributedString(string: viewModel.actor, attributes: attributes)
 
-        attributes[NSAttributedStringKey.font] = Styles.Text.secondary.preferredFont
+        attributes[.font] = Styles.Text.secondary.preferredFont
         mActorString.append(NSAttributedString(string: " \(action)", attributes: attributes))
         actorButton.setAttributedTitle(mActorString, for: .normal)
     }

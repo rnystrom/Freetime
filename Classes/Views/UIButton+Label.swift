@@ -19,7 +19,7 @@ extension UIButton {
     }
 
     func setupAsLabel(icon: Bool = true) {
-        accessibilityTraits = UIAccessibilityTraitNone
+        accessibilityTraits = .none
         tintColor = .white
         titleLabel?.font = Styles.Text.smallTitle.preferredFont
         layer.cornerRadius = Styles.Sizes.labelCornerRadius

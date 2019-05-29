@@ -12,13 +12,13 @@ import IGListKit
 
 final class LoadMoreCell: SelectableCell {
 
-    private let activity = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+    private let activity = UIActivityIndicatorView(style: .gray)
     private let label = UILabel()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        accessibilityTraits |= UIAccessibilityTraitButton
+        accessibilityTraits.insert(.button)
         isAccessibilityElement = true
         label.font = Styles.Text.button.preferredFont
         label.textColor = Styles.Colors.Blue.medium.color

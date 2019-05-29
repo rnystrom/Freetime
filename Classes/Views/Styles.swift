@@ -127,7 +127,7 @@ enum Styles {
     static func setupAppearance() {
         UINavigationBar.appearance().tintColor =  Styles.Colors.Blue.medium.color
         UINavigationBar.appearance().titleTextAttributes =
-            [NSAttributedStringKey.foregroundColor: Styles.Colors.Gray.dark.color]
+            [.foregroundColor: Styles.Colors.Gray.dark.color]
         UISwitch.appearance().onTintColor = Styles.Colors.Blue.medium.color
         UISearchBar.appearance().tintColor = Styles.Colors.Blue.medium.color
         DropdownTitleView.appearance().chevronTintColor = Styles.Colors.Gray.medium.color
@@ -146,7 +146,7 @@ extension TextStyle {
         return self.font(contentSizeCategory: UIContentSizeCategory.preferred)
     }
 
-    func with(attributes: [NSAttributedStringKey: Any]) -> TextStyle {
+    func with(attributes: [NSAttributedString.Key: Any]) -> TextStyle {
         var newAttributes = self.attributes
         for (key, value) in attributes {
             newAttributes[key] = value

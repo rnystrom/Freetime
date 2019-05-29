@@ -35,7 +35,7 @@ final class IssueReactionCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        accessibilityTraits |= UIAccessibilityTraitButton
+        accessibilityTraits.insert(.button)
         isAccessibilityElement = true
 
         emojiLabel.textAlignment = .center
@@ -122,9 +122,9 @@ final class IssueReactionCell: UICollectionViewCell {
     func iterate(add: Bool) {
         let animation = CATransition()
         animation.duration = 0.25
-        animation.type = kCATransitionPush
-        animation.subtype = add ? kCATransitionFromTop : kCATransitionFromBottom
-        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        animation.type = .push
+        animation.subtype = add ? .fromTop : .fromBottom
+        animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         countLabel.layer.add(animation, forKey: "text-change")
     }
 

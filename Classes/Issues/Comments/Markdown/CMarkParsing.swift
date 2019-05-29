@@ -79,12 +79,12 @@ private extension TextElement {
             children.build(builder, options: options, context: context)
         case .strikethrough(let children):
             builder.add(attributes: [
-                .strikethroughStyle: NSUnderlineStyle.styleSingle.rawValue,
+                .strikethroughStyle: NSUnderlineStyle.single.rawValue,
                 .strikethroughColor: builder.tipAttributes?[.foregroundColor] ?? Styles.Colors.Gray.dark.color
                 ])
             children.build(builder, options: options, context: context)
         case .link(let children, _, let url):
-            var attributes: [NSAttributedStringKey: Any] = [
+            var attributes: [NSAttributedString.Key: Any] = [
                 .foregroundColor: Styles.Colors.Blue.medium.color,
                 .highlight: true
             ]

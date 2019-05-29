@@ -33,7 +33,7 @@ extension UIApplicationShortcutItem {
             localizedTitle: localizedTitle,
             localizedSubtitle: localizedSubtitle,
             icon: icon,
-            userInfo: route.encoded
+            userInfo: route.encoded as [String: NSSecureCoding]
         )
     }
 

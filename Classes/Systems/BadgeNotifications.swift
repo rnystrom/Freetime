@@ -70,9 +70,9 @@ final class BadgeNotifications {
             UNUserNotificationCenter.current().requestAuthorization(options: options, completionHandler: { (granted, _) in
                 permissionHandler?(granted)
             })
-            application.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
+            application.setMinimumBackgroundFetchInterval(UIApplication.backgroundFetchIntervalMinimum)
         } else {
-            application.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalNever)
+            application.setMinimumBackgroundFetchInterval(UIApplication.backgroundFetchIntervalNever)
         }
     }
 

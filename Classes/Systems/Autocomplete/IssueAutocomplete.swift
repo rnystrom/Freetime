@@ -87,6 +87,6 @@ final class IssueAutocomplete: AutocompleteType {
         return prefix + "\(results[index].number)"
     }
 
-    var highlightAttributes: [NSAttributedStringKey: Any]? { return nil }
+    var highlightAttributes: [NSAttributedString.Key: Any]? { return nil }
 
 }

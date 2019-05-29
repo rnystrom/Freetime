@@ -11,7 +11,7 @@ import SnapKit
 
 final class SpinnerCell: UICollectionViewCell {
 
-    let activity = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+    let activity = UIActivityIndicatorView(style: .gray)
 
     override init(frame: CGRect) {
         super.init(frame: frame)

@@ -11,13 +11,13 @@ import UIKit
 extension UIViewController {
 
     func setRightBarItemSpinning() {
-        let activity = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        let activity = UIActivityIndicatorView(style: .gray)
         activity.startAnimating()
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: activity)
     }
 
     func setLeftBarItemSpinning() {
-        let activity = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        let activity = UIActivityIndicatorView(style: .gray)
         activity.startAnimating()
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: activity)
     }

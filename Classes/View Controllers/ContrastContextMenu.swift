@@ -37,9 +37,9 @@ final class ContrastContextMenu: UITableViewController {
     private class Cell: UITableViewCell {
         static let reuseIdentifier = "cell"
         var border: UIView?
-        override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
             super.init(style: style, reuseIdentifier: reuseIdentifier)
-            accessibilityTraits |= UIAccessibilityTraitButton
+            accessibilityTraits.insert(.button)
             isAccessibilityElement = true
 
             selectedBackgroundView = UIView()

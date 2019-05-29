@@ -18,7 +18,7 @@ struct AlertAction {
 
     let rootViewController: UIViewController?
     let title: String?
-    let style: UIAlertActionStyle
+    let style: UIAlertAction.Style
 
     enum AlertShareType {
         case shareUrl

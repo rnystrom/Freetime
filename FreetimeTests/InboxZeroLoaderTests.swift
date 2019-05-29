@@ -10,7 +10,7 @@ import XCTest
 @testable import Freetime
 
 extension Date {
-    static func date(from: [Calendar.Component : Int]) -> Date {
+    static func date(from: [Calendar.Component: Int]) -> Date {
         var dc = DateComponents()
         dc.calendar = Calendar.current
         for (comp, val) in from {

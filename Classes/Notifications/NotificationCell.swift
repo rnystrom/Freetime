@@ -43,7 +43,7 @@ final class NotificationCell: SelectableCell, CAAnimationDelegate {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        accessibilityTraits |= UIAccessibilityTraitButton
+        accessibilityTraits.insert(.button)
         isAccessibilityElement = true
 
         backgroundColor = .white
@@ -163,9 +163,9 @@ final class NotificationCell: SelectableCell, CAAnimationDelegate {
         dateLabel.setText(date: model.date, format: .short)
         self.delegate = delegate
 
-        var titleAttributes = [
-            NSAttributedStringKey.font: Styles.Text.title.preferredFont,
-            NSAttributedStringKey.foregroundColor: Styles.Colors.Gray.light.color
+        var titleAttributes: [NSAttributedString.Key: Any] = [
+            .font: Styles.Text.title.preferredFont,
+            .foregroundColor: Styles.Colors.Gray.light.color
         ]
         let title = NSMutableAttributedString(string: "\(model.owner)/\(model.repo) ", attributes: titleAttributes)
         titleAttributes[.font] = Styles.Text.secondary.preferredFont
@@ -261,12 +261,12 @@ final class NotificationCell: SelectableCell, CAAnimationDelegate {
         let scale = CABasicAnimation(keyPath: "transform.scale")
         scale.fromValue = 1
         scale.duration = scaleDuration
-        scale.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+        scale.timingFunction = CAMediaTimingFunction(name: .linear)
 
         let fade = CABasicAnimation(keyPath: "opacity")
         fade.fromValue = 0
         fade.duration = 0.05
-        fade.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+        fade.timingFunction = CAMediaTimingFunction(name: .linear)
 
         let group = CAAnimationGroup()
         group.duration = scaleDuration

@@ -85,9 +85,9 @@ final class IssueStatusEventCell: UICollectionViewCell {
     // MARK: Public API
 
     func configure(_ model: IssueStatusEventModel) {
-        let actorAttributes = [
-            NSAttributedStringKey.foregroundColor: Styles.Colors.Gray.dark.color,
-            NSAttributedStringKey.font: Styles.Text.secondaryBold.preferredFont
+        let actorAttributes: [NSAttributedString.Key: Any] = [
+            .foregroundColor: Styles.Colors.Gray.dark.color,
+            .font: Styles.Text.secondaryBold.preferredFont
         ]
         actorButton.setAttributedTitle(NSAttributedString(string: model.actor, attributes: actorAttributes), for: .normal)
 

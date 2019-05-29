@@ -25,7 +25,7 @@ final class IssueCommitCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         isAccessibilityElement = true
-        accessibilityTraits = UIAccessibilityTraitButton
+        accessibilityTraits = .button
 
         commitImageView.contentMode = .scaleAspectFit
         commitImageView.tintColor = Styles.Colors.Gray.light.color

@@ -18,7 +18,7 @@ final class RepositoryEmptyResultsCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        accessibilityTraits |= UIAccessibilityTraitStaticText
+        accessibilityTraits.insert(.staticText)
         isAccessibilityElement = true
 
         let tint = Styles.Colors.Gray.light.color

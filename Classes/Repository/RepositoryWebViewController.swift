@@ -66,7 +66,7 @@ final class RepositoryWebViewController: UIViewController {
     private let emptyView = EmptyView()
 
     private lazy var activityIndicator: UIActivityIndicatorView = {
-        let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        let activityIndicator = UIActivityIndicatorView(style: .gray)
         activityIndicator.hidesWhenStopped = true
 
         return activityIndicator

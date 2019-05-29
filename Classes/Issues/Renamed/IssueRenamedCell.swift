@@ -70,14 +70,14 @@ final class IssueRenamedCell: UICollectionViewCell {
     // MARK: Public API
 
     func configure(_ model: IssueRenamedModel) {
-        let actorAttributes = [
-            NSAttributedStringKey.font: Styles.Text.secondaryBold.preferredFont,
-            NSAttributedStringKey.foregroundColor: Styles.Colors.Gray.dark.color
+        let actorAttributes: [NSAttributedString.Key: Any] = [
+            .font: Styles.Text.secondaryBold.preferredFont,
+            .foregroundColor: Styles.Colors.Gray.dark.color
         ]
         let actor = NSMutableAttributedString(string: model.actor, attributes: actorAttributes)
-        let referencedAttributes = [
-            NSAttributedStringKey.font: Styles.Text.secondary.preferredFont,
-            NSAttributedStringKey.foregroundColor: Styles.Colors.Gray.medium.color
+        let referencedAttributes: [NSAttributedString.Key: Any] = [
+            .font: Styles.Text.secondary.preferredFont,
+            .foregroundColor: Styles.Colors.Gray.medium.color
         ]
         actor.append(NSAttributedString(
             string: NSLocalizedString(" renamed", comment: ""),

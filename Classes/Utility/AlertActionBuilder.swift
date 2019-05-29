@@ -18,7 +18,7 @@ class AlertActionBuilder {
 
     var rootViewController: UIViewController?
     var title: String?
-    var style: UIAlertActionStyle?
+    var style: UIAlertAction.Style?
 
     // MARK: Init
 

@@ -55,7 +55,7 @@ final class NoNewNotificationsCell: UICollectionViewCell {
         NotificationCenter.default
             .addObserver(self,
                 selector: #selector(resetAnimations),
-                name: .UIApplicationWillEnterForeground,
+                name: UIApplication.willEnterForegroundNotification,
                 object: nil
         )
 
@@ -132,7 +132,7 @@ final class NoNewNotificationsCell: UICollectionViewCell {
 
     @objc private func resetAnimations() {
         guard trueUnlessReduceMotionEnabled else { return }
-        let timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        let timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         let duration: TimeInterval = 1
 
         let emojiBounce = CABasicAnimation(keyPath: "transform.translation.y")

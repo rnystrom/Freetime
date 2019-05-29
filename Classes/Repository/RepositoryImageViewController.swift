@@ -22,7 +22,7 @@ UIScrollViewDelegate {
     private let emptyView = EmptyView()
     private let scrollView = UIScrollView()
     private let imageView = FLAnimatedImageView()
-    private let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+    private let activityIndicator = UIActivityIndicatorView(style: .gray)
     private var imageUrl: URL? {
         let builder = URLBuilder.github()
             .add(path: repo.owner)

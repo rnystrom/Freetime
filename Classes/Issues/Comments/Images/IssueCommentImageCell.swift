@@ -28,7 +28,7 @@ final class IssueCommentImageCell: IssueCommentBaseCell, ListBindable {
 
     let imageView = FLAnimatedImageView()
 
-    private let spinner = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+    private let spinner = UIActivityIndicatorView(style: .gray)
     private var tapGesture: UITapGestureRecognizer!
 
     override init(frame: CGRect) {

@@ -41,11 +41,11 @@ extension UINavigationItem {
             return
         }
 
-        let titleAttributes: [NSAttributedStringKey: Any] = [
+        let titleAttributes: [NSAttributedString.Key: Any] = [
             .font: Styles.Text.bodyBold.preferredFont,
             .foregroundColor: Styles.Colors.Gray.dark.color
         ]
-        let subtitleAttributes: [NSAttributedStringKey: Any] = [
+        let subtitleAttributes: [NSAttributedString.Key: Any] = [
             .font: Styles.Text.secondaryBold.preferredFont,
             .foregroundColor: Styles.Colors.Gray.light.color
         ]

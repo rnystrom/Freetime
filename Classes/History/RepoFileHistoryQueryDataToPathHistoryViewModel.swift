@@ -28,7 +28,7 @@ extension RepoFileHistoryQuery.Data {
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.paragraphSpacing = 12
             paragraphStyle.lineSpacing = 2
-            let attributes: [NSAttributedStringKey: Any] = [
+            let attributes: [NSAttributedString.Key: Any] = [
                 .foregroundColor: Styles.Colors.Gray.dark.color,
                 .paragraphStyle: paragraphStyle,
                 .backgroundColor: UIColor.white

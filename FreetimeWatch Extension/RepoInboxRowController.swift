@@ -66,7 +66,7 @@ final class RepoInboxRowController: NSObject {
         }
 
         [typeImage, titleLabel, dateLabel, numberLabel].forEach { $0.setIsAccessibilityElement(false) }
-        enclosingGroup.setAccessibilityTraits(UIAccessibilityTraitStaticText)
+        enclosingGroup.setAccessibilityTraits(.staticText)
         enclosingGroup.setIsAccessibilityElement(true)
         enclosingGroup.setAccessibilityLabel(accessibilityLabel) // FIXME: We should add the notification type here, probably by using "NotificationType" (only available in GitHawk) or remove that completely and add the localization to V3NotificationType
     }

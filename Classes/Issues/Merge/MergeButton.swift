@@ -23,7 +23,7 @@ final class MergeButton: UIControl {
 
     private let mergeLabel = UILabel()
     private let optionBorder = UIView()
-    private let activityView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+    private let activityView = UIActivityIndicatorView(style: .gray)
     private let gradientLayer = CAGradientLayer()
 
     override init(frame: CGRect) {
@@ -50,7 +50,7 @@ final class MergeButton: UIControl {
         optionButton.imageView?.contentMode = .center
         optionButton.setImage(image, for: .normal)
         optionButton.isAccessibilityElement = true
-        optionButton.accessibilityTraits = UIAccessibilityTraitButton
+        optionButton.accessibilityTraits = .button
         optionButton.addTarget(self, action: #selector(onOptionsTouch), for: .touchUpInside)
         optionButton.snp.makeConstraints { make in
             make.top.right.bottom.equalToSuperview()
@@ -108,7 +108,7 @@ final class MergeButton: UIControl {
             layer.addSublayer(gradientLayer)
 
             [mergeLabel, optionButton, optionBorder, activityView].forEach {
-                bringSubview(toFront: $0)
+                bringSubviewToFront($0)
             }
         } else {
             gradientLayer.removeFromSuperlayer()
@@ -147,7 +147,7 @@ final class MergeButton: UIControl {
                 height: bounds.size.height
             )
         )
-        element.accessibilityTraits |= UIAccessibilityTraitButton
+        element.accessibilityTraits.insert(.button)
         return element
     }
 

@@ -67,13 +67,13 @@ final class Feed: NSObject, UIScrollViewDelegate {
             center.addObserver(
                 self,
                 selector: #selector(didBecomeActive),
-                name: .UIApplicationDidBecomeActive,
+                name: UIApplication.didBecomeActiveNotification,
                 object: nil
             )
             center.addObserver(
                 self,
                 selector: #selector(willResignActive),
-                name: .UIApplicationWillResignActive,
+                name: UIApplication.willResignActiveNotification,
                 object: nil
             )
         }

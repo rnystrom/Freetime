@@ -40,5 +40,5 @@ private extension AccessibilityHelper {
 // MARK: Reduce motion
 
 var trueUnlessReduceMotionEnabled: Bool {
-    return !UIAccessibilityIsReduceMotionEnabled()
+    return !UIAccessibility.isReduceMotionEnabled
 }

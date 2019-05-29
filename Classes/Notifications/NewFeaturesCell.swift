@@ -71,12 +71,12 @@ final class NewFeaturesCell: UICollectionViewCell {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        contentView.frame = UIEdgeInsetsInsetRect(CGRect(
+        contentView.frame = CGRect(
             x: safeAreaInsets.left,
             y: bounds.minY,
             width: bounds.width - safeAreaInsets.left - safeAreaInsets.right,
             height: bounds.height
-        ), NewFeaturesCell.inset)
+        ).inset(by: NewFeaturesCell.inset)
     }
 
     @objc private func onCloseButton() {

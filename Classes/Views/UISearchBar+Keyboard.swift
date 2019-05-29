@@ -16,7 +16,7 @@ extension UISearchBar {
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(resignFirstResponder),
-            name: .UIKeyboardWillHide,
+            name: UIResponder.keyboardWillHideNotification,
             object: nil
         )
     }

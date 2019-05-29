@@ -46,7 +46,7 @@ final class IssueCommentAutocomplete {
         return map.map { $0.key }
     }
 
-    func highlightAttributes(prefix: String) -> [NSAttributedStringKey: Any]? {
+    func highlightAttributes(prefix: String) -> [NSAttributedString.Key: Any]? {
         return map[prefix]?.highlightAttributes
     }
 

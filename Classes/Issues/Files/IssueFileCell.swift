@@ -57,7 +57,7 @@ final class IssueFileCell: SelectableCell {
 
     func configure(path: String, additions: Int, deletions: Int, disclosureHidden: Bool) {
         let changeString = NSMutableAttributedString()
-        var attributes: [NSAttributedStringKey: Any] = [
+        var attributes: [NSAttributedString.Key: Any] = [
             .font: Styles.Text.secondaryBold.preferredFont
         ]
 

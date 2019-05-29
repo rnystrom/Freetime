@@ -19,7 +19,7 @@ final class UIContentSizeCategoryChangeHandler {
         center.addObserver(
             self,
             selector: #selector(contentSizeCategoryDidChange),
-            name: .UIContentSizeCategoryDidChange,
+            name: UIContentSizeCategory.didChangeNotification,
             object: nil
         )
     }

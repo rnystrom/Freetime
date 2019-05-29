@@ -13,7 +13,7 @@ enum Haptic {
     static private let selectionGenerator = UISelectionFeedbackGenerator()
     static private let notificationGenerator = UINotificationFeedbackGenerator()
 
-    static func triggerImpact(_ style: UIImpactFeedbackStyle) {
+    static func triggerImpact(_ style: UIImpactFeedbackGenerator.FeedbackStyle) {
         UIImpactFeedbackGenerator(style: style).impactOccurred()
     }
 
@@ -21,7 +21,7 @@ enum Haptic {
         selectionGenerator.selectionChanged()
     }
 
-    static func triggerNotification(_ type: UINotificationFeedbackType) {
+    static func triggerNotification(_ type: UINotificationFeedbackGenerator.FeedbackType) {
         notificationGenerator.notificationOccurred(type)
     }
 }

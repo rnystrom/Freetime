@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private let flexController = FlexController()
     private let appController = AppController()
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         appController.appDidFinishLaunching(with: window)
 
@@ -63,7 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         appController.performFetch(application: application, with: completionHandler)
     }
 
-    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey: Any] = [:]) -> Bool {
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
         return appController.router.handle(url: url).wasHandled
     }
 

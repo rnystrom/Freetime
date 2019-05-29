@@ -26,7 +26,7 @@ final class LabelListCell: UICollectionViewCell, ListBindable {
         super.init(frame: frame)
 
         isAccessibilityElement = true
-        accessibilityTraits |= UIAccessibilityTraitButton
+        accessibilityTraits.insert(.button)
 
         layer.cornerRadius = Styles.Sizes.labelCornerRadius
         contentView.layer.cornerRadius = Styles.Sizes.labelCornerRadius

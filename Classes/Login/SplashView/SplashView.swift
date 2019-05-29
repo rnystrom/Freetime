@@ -59,8 +59,8 @@ final class SplashView: UIView {
         pulseAnimation.fromValue = 1.0
         pulseAnimation.toValue = 0.9
         pulseAnimation.duration = 2
-        pulseAnimation.fillMode = kCAFillModeForwards
-        pulseAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        pulseAnimation.fillMode = .forwards
+        pulseAnimation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
 
         birdImageView.layer.add(pulseAnimation, forKey: "scaling")
     }
@@ -71,8 +71,8 @@ final class SplashView: UIView {
         rotateAnimation.repeatCount = .infinity
         rotateAnimation.byValue = 2 * Double.pi
         rotateAnimation.duration = 120
-        rotateAnimation.fillMode = kCAFillModeForwards
-        rotateAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+        rotateAnimation.fillMode = .forwards
+        rotateAnimation.timingFunction = CAMediaTimingFunction(name: .linear)
 
         branchesImageView.layer.add(rotateAnimation, forKey: "rotation")
     }

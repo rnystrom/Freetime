@@ -13,7 +13,7 @@ import XLPagerTabStrip
 final class RepositoryLoadingViewController: UIViewController,
 IndicatorInfoProvider {
 
-    private let spinner = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+    private let spinner = UIActivityIndicatorView(style: .gray)
 
     override func viewDidLoad() {
         super.viewDidLoad()

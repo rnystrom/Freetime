@@ -57,8 +57,8 @@ final class TextActionsController: NSObject,
 
     // MARK: UIImagePickerControllerDelegate
 
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
-        guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else { return }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        guard let image = info[.originalImage] as? UIImage else { return }
 
         let username = client?.userSession?.username ?? Constants.Strings.unknown
         guard let uploadController = ImageUploadTableViewController.create(image, username: username, delegate: self) else { return }

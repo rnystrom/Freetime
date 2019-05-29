@@ -181,7 +181,7 @@ final class IssueCommentHtmlCell: IssueCommentBaseCell, ListBindable, UIWebViewD
 
     // MARK: UIWebViewDelegate
 
-    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebView.NavigationType) -> Bool {
         // if the cell is hidden, its been put back in the reuse pool
         guard isHidden == false, let url = request.url else { return true }
 

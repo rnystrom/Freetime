@@ -95,7 +95,7 @@ final class IssueTextActionsView: UIView, UICollectionViewDataSource, UICollecti
     private let sendButtonGradientLayer = CAGradientLayer()
     private let sendButton = UIButton()
     private let activityIndicator = UIActivityIndicatorView(
-        activityIndicatorStyle: UIActivityIndicatorViewStyle.gray
+        style: .gray
     )
 
     public var sendButtonEnabled: Bool {

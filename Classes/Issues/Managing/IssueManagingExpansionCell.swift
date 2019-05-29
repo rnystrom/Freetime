@@ -25,7 +25,7 @@ final class IssueManagingExpansionCell: UICollectionViewCell, ListBindable {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        accessibilityTraits |= UIAccessibilityTraitButton
+        accessibilityTraits.insert(.button)
         isAccessibilityElement = true
 
         backgroundHighlightView.backgroundColor = UIColor(white: 0, alpha: 0.07)

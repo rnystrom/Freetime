@@ -16,7 +16,7 @@ extension UIViewController {
         case .url(let url): presentSafari(url: url)
         case .email(let email):
             if let url = URL(string: "mailTo:\(email)") {
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                UIApplication.shared.open(url)
             }
         case .username(let username): presentProfile(login: username)
         case .commit(let commit): presentCommit(owner: commit.owner, repo: commit.repo, hash: commit.hash)

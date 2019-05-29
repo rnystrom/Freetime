@@ -20,7 +20,7 @@ final class IssueManagingActionCell: UICollectionViewCell, ListBindable {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        accessibilityTraits |= UIAccessibilityTraitButton
+        accessibilityTraits.insert(.button)
         isAccessibilityElement = true
 
         let tint = Styles.Colors.Blue.medium.color

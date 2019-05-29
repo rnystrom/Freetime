@@ -39,7 +39,7 @@ class IssueCommentBaseCell: UICollectionViewCell, UIGestureRecognizerDelegate {
 
         collapseButton.setImage(UIImage(named: "bullets").withRenderingMode(.alwaysTemplate), for: .normal)
         collapseButton.backgroundColor = Styles.Colors.Blue.medium.color
-        collapseButton.accessibilityTraits = UIAccessibilityTraitNone
+        collapseButton.accessibilityTraits = .none
         collapseButton.tintColor = .white
         collapseButton.titleLabel?.font = Styles.Text.smallTitle.preferredFont
         collapseButton.isHidden = true
@@ -65,7 +65,7 @@ class IssueCommentBaseCell: UICollectionViewCell, UIGestureRecognizerDelegate {
 
         if collapseLayer.isHidden == false {
             contentView.layer.addSublayer(collapseLayer)
-            contentView.bringSubview(toFront: collapseButton)
+            contentView.bringSubviewToFront(collapseButton)
 
             let collapseFrame = CGRect(
                 x: contentBounds.minX,

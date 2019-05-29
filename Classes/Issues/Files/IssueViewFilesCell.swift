@@ -16,7 +16,7 @@ final class IssueViewFilesCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         isAccessibilityElement = true
-        accessibilityTraits |= UIAccessibilityTraitButton
+        accessibilityTraits.insert(.button)
 
         contentView.addSubview(label)
         label.snp.makeConstraints { make in
