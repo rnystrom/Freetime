@@ -64,17 +64,25 @@ final class NewFeaturesController {
         guard let url = fetchURL,
             (testing == true || hasFetchedLatest == false)
             else { return }
-        hasFetchedLatest = true
 
-        let task = session.dataTask(with: url) { (data, response, _) in
-            if let response = response as? HTTPURLResponse,
-                response.statusCode == 200,
-                let data = data,
-                let string = String(data: data, encoding: .utf8) {
-                DispatchQueue.main.async { [weak self] in
-                    self?.latestMarkdown = string
-                    success()
-                }
+        let task = session.dataTask(with: url) { data, response, error in
+            guard
+                let httpResponse = response as? HTTPURLResponse,
+                [200, 404].contains(httpResponse.statusCode),
+                let data = data else {
+                    let message = """
+                    "Expected a successfull or failing status code, but errored
+                    with \(error?.localizedDescription ?? "no error") for
+                    \(response?.description ?? "no response")
+                    """
+                    return assertionFailure(message)
+            }
+            let string = String(decoding: data, as: UTF8.self)
+            DispatchQueue.main.async { [weak self] in
+                guard let strongSelf = self else { return }
+                strongSelf.hasFetchedLatest = true
+                strongSelf.latestMarkdown = string
+                success()
             }
         }
         task.resume()
